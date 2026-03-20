@@ -1,0 +1,144 @@
+{
+  "seo": {
+    "title": "InovaThings Brasil - Engenharia de Software B2B",
+    "description": "Desenvolvimento de software sob encomenda, consultoria em TI, tratamento de dados corporativos e web design B2B com segurança jurídica e alta performance."
+  },
+  "navbar": {
+    "home": "Início",
+    "services": "Serviços",
+    "portfolio": "Portfólio",
+    "contact": "Contato",
+    "cta": "Falar com Consultor"
+  },
+  "hero": {
+    "badge": "Inovação Tecnológica B2B",
+    "title": "Engenharia de Software e Soluções Digitais Escaláveis",
+    "description": "Desenvolvemos arquiteturas robustas, plataformas sob medida e fornecemos consultoria estratégica em TI para otimizar e escalar a operação da sua empresa.",
+    "portfolioBtn": "Conhecer Portfólio",
+    "consultingBtn": "Agendar Consultoria"
+  },
+  "services": {
+    "title": "Serviços e Expertise",
+    "description": "Soluções tecnológicas completas para impulsionar e escalar o seu negócio no ambiente digital.",
+    "items": [
+      {
+        "title": "Desenvolvimento Sob Medida",
+        "description": "Criação e licenciamento de softwares customizáveis e não-customizáveis. Construímos plataformas focadas no domínio do seu negócio, garantindo manutenibilidade e alta disponibilidade."
+      },
+      {
+        "title": "Infraestrutura e Cloud",
+        "description": "Tratamento de dados, serviços de hospedagem e provedores de aplicação. Projetamos infraestruturas preparadas para alta concorrência e processamento de eventos."
+      },
+      {
+        "title": "Consultoria em TI",
+        "description": "Suporte técnico especializado e arquitetura de sistemas. Auxiliamos equipes a definir as melhores escolhas técnicas, de monólitos modulares a ecossistemas distribuídos."
+      },
+      {
+        "title": "Experiência Digital e Web Design",
+        "description": "Concepção de portais corporativos, e-commerces e interfaces modernas com foco em usabilidade e performance de renderização."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Ecossistema de Produtos",
+    "subtitle": "Soluções proprietárias e alianças estratégicas impulsionadas por Inteligência Artificial.",
+    "partnerPrefix": "Em parceria com ",
+    "cta": "Falar com especialista",
+    "projects": [
+      {
+        "id": "nat",
+        "title": "NAT: Motor de IA Generativa",
+        "description": "Infraestrutura completa de LLMs (Large Language Models) e IA Generativa integrável via API Gateway. Desenvolvemos modelos customizados e endpoints escaláveis para orquestrar fluxos complexos de IA em sistemas corporativos.",
+        "tags": ["LLM", "GenAI", "API Gateway", "Machine Learning"]
+      },
+      {
+        "id": "sgcp",
+        "title": "SGCP: Autenticação e Jornada",
+        "description": "Plataforma robusta para gestão de ponto eletrônico com validação biométrica de alta precisão. Emprega algoritmos de visão computacional para prevenção de fraudes e auditoria de registros em tempo real.",
+        "tags": ["Biometria", "Computer Vision", "Analytics"]
+      },
+      {
+        "id": "memo",
+        "title": "MEMO: Gestão Semântica de Acervos",
+        "description": "Motor de gestão documental impulsionado por IA. Aplica OCR avançado e Processamento de Linguagem Natural (NLP) para vetorizar acervos não-estruturados, transformando-os em bases de conhecimento pesquisáveis (RAG).",
+        "tags": ["RAG", "OCR", "NLP", "Big Data"]
+      },
+      {
+        "id": "conectelegis",
+        "title": "Conectelegis",
+        "partner": "PróSistema",
+        "description": "Arquitetura inteligente voltada ao ecossistema jurídico. Automatiza fluxos de trabalho operacionais e aplica modelos preditivos para análise de processos e estruturação semântica de jurisprudência em larga escala.",
+        "tags": ["LegalTech", "Automação", "Integração B2B"]
+      },
+      {
+        "id": "nathealth",
+        "title": "NatHealth",
+        "partner": "Akila",
+        "partnerUrl": "https://akilatecnologia.com.br/",
+        "description": "Ecossistema digital de alta performance para o setor hospitalar. Integra modelos de IA para triagem otimizada de pacientes, análise preditiva de evolução clínica e alocação inteligente de recursos médicos.",
+        "tags": ["HealthTech", "Análise Preditiva", "IoT"]
+      }
+    ]
+  },
+  "about": {
+    "badge": "Autoridade e Confiança",
+    "title": "Engenharia Sólida e Segurança Jurídica",
+    "p1": "A InovaThings Brasil atua como um parceiro tecnológico de alto nível, fundamentando suas operações no mais estrito rigor legal corporativo (CNPJ 65.301.520/0001-80). Somos integralmente habilitados para o desenvolvimento sob encomenda, licenciamento de softwares, consultoria avançada em tecnologia da informação, tratamento e provimento de dados em infraestruturas cloud e concepção de web design focado em conversão B2B.",
+    "p2": "A nossa capacidade técnica profunda é diretamente amparada pela nossa propriedade intelectual consolidada, incluindo o registro processual ativo no Instituto Nacional da Propriedade Industrial (INPI sob nº 922887810). Estes pilares normativos e operacionais preveem absoluta segurança jurídica e estrutural para a execução e sustentação de contratos e sistemas distribuídos de missão crítica corporativa.",
+    "cards": {
+      "inpi": {
+        "title": "Registro INPI",
+        "number": "Processo nº 922887810",
+        "desc": "Garantia de propriedade intelectual para ativos digitais."
+      },
+      "cnpj": {
+        "title": "Licenciamento",
+        "number": "CNPJ 65.301.520/0001-80",
+        "desc": "Atuação em conformidade com regulações B2B de software."
+      },
+      "expertise": {
+        "title": "Expertise Homologada",
+        "subtitle": "Desenvolvimento, Cloud e Web Design",
+        "tags": [
+          "Software Customizado",
+          "Suporte Tecnológico",
+          "Datacenters Internacionais"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Inicie seu Projeto",
+    "description": "Fale com nossos especialistas em arquitetura e engenharia de software.",
+    "corporateEmail": "E-mail Corporativo",
+    "phone": "Telefone / WhatsApp",
+    "form": {
+      "name": "Nome",
+      "namePlaceholder": "Seu nome completo",
+      "email": "E-mail Corporativo",
+      "emailPlaceholder": "voce@suaempresa.com.br",
+      "company": "Empresa",
+      "companyPlaceholder": "Nome da sua empresa",
+      "subject": "Assunto",
+      "subjectPlaceholder": "Como podemos ajudar o seu negócio?",
+      "message": "Mensagem",
+      "messagePlaceholder": "Conte-nos os detalhes técnicos e operacionais do seu projeto...",
+      "submitPending": "Processando...",
+      "submit": "Enviar Mensagem",
+      "success": "Mensagem enviada com sucesso! Um de nossos engenheiros entrará em contato em breve.",
+      "error": "Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente ou entre em contato diretamente por e-mail."
+    }
+  },
+  "footer": {
+    "desc": "Engenharia de software e consultoria tecnológica.",
+    "legalTitle": "Informações Legais",
+    "legal1": "Razão Social: INOVATHINGS BRASIL TECNOLOGIA LTDA",
+    "legal2": "CNPJ: 65.301.520/0001-80",
+    "addressTitle": "Endereço e Contato",
+    "address1": "Setor SHIN CA 01 Lote A, Bloco A, Sala 234 - Lago Norte",
+    "address2": "Brasília - DF, CEP: 71.503-501",
+    "email": "E-mail: CONTATO@NAT.IA.BR",
+    "phone": "Tel: (61) 8183-1244",
+    "copy": "InovaThings Brasil Tecnologia Ltda. Todos os direitos reservados."
+  }
+}

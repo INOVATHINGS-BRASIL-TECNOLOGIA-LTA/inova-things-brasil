@@ -1,0 +1,144 @@
+{
+  "seo": {
+    "title": "InovaThings Brasil - B2B Software Engineering",
+    "description": "Custom software development, IT consulting, corporate data processing, and high-performance B2B web design with strong legal security."
+  },
+  "navbar": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "cta": "Talk to a Consultant"
+  },
+  "hero": {
+    "badge": "B2B Technological Innovation",
+    "title": "Software Engineering and Scalable Digital Solutions",
+    "description": "We develop robust architectures, tailor-made platforms, and provide strategic IT consulting to optimize and scale your business operations.",
+    "portfolioBtn": "Discover Portfolio",
+    "consultingBtn": "Schedule Consulting"
+  },
+  "services": {
+    "title": "Services and Expertise",
+    "description": "Complete technological solutions to boost and scale your business in the digital environment.",
+    "items": [
+      {
+        "title": "Custom Software Development",
+        "description": "Creation and licensing of customizable and non-customizable software. We build platforms focused on your business domain, ensuring maintainability and high availability."
+      },
+      {
+        "title": "Infrastructure and Cloud",
+        "description": "Data processing, hosting services, and application providers. We design infrastructures prepared for high concurrency and event processing."
+      },
+      {
+        "title": "IT Consulting",
+        "description": "Specialized technical support and systems architecture. We assist teams in defining the best technical choices, from modular monoliths to distributed ecosystems."
+      },
+      {
+        "title": "Digital Experience and Web Design",
+        "description": "Conception of corporate portals, e-commerce, and modern interfaces with a focus on usability and rendering performance."
+      }
+    ]
+  },
+  "portfolio": {
+    "title": "Product Ecosystem",
+    "subtitle": "Proprietary solutions and strategic alliances driven by Artificial Intelligence.",
+    "partnerPrefix": "In partnership with ",
+    "cta": "Talk to a specialist",
+    "projects": [
+      {
+        "id": "nat",
+        "title": "NAT: Generative AI Engine",
+        "description": "Comprehensive LLM and Generative AI infrastructure integrable via API Gateway. We engineer custom models and scalable endpoints to orchestrate complex AI workflows within enterprise systems.",
+        "tags": ["LLM", "GenAI", "API Gateway", "Machine Learning"]
+      },
+      {
+        "id": "sgcp",
+        "title": "SGCP: Authentication & Attendance",
+        "description": "Robust time and attendance management platform featuring high-precision biometric validation. Employs computer vision algorithms for fraud prevention and real-time record auditing.",
+        "tags": ["Biometrics", "Computer Vision", "Analytics"]
+      },
+      {
+        "id": "memo",
+        "title": "MEMO: Semantic Archive Management",
+        "description": "AI-driven document management engine. Applies advanced OCR and Natural Language Processing (NLP) to vectorize unstructured archives, turning them into highly searchable knowledge bases (RAG).",
+        "tags": ["RAG", "OCR", "NLP", "Big Data"]
+      },
+      {
+        "id": "conectelegis",
+        "title": "Conectelegis",
+        "partner": "PróSistema",
+        "description": "Intelligent architecture tailored for the legal ecosystem. Automates operational workflows and applies predictive models for case analysis and semantic structuring of case law at scale.",
+        "tags": ["LegalTech", "Automation", "B2B Integration"]
+      },
+      {
+        "id": "nathealth",
+        "title": "NatHealth",
+        "partner": "Akila",
+        "partnerUrl": "https://akilatecnologia.com.br/",
+        "description": "High-performance digital ecosystem for the healthcare sector. Integrates AI models for optimized patient triage, predictive clinical evolution analysis, and smart allocation of medical resources.",
+        "tags": ["HealthTech", "Predictive Analytics", "IoT"]
+      }
+    ]
+  },
+  "about": {
+    "badge": "Authority and Trust",
+    "title": "Solid Engineering and Legal Security",
+    "p1": "InovaThings Brasil acts as a high-level technological partner, grounding its operations in the strictest legal corporate rigor (CNPJ 65.301.520/0001-80). We are fully qualified for custom development, software licensing, advanced IT consulting, data processing, and cloud infrastructures, as well as B2B conversion-focused web design.",
+    "p2": "Our deep technical capability is directly supported by our consolidated intellectual property, including active procedural registration with the National Institute of Industrial Property (INPI No. 922887810). These regulatory and operational pillars provide absolute legal and structural security for executing and sustaining critical corporate contracts and distributed systems.",
+    "cards": {
+      "inpi": {
+        "title": "INPI Registration",
+        "number": "Process No. 922887810",
+        "desc": "Intellectual property guarantee for digital assets."
+      },
+      "cnpj": {
+        "title": "Licensing",
+        "number": "CNPJ 65.301.520/0001-80",
+        "desc": "Operating in compliance with B2B software regulations."
+      },
+      "expertise": {
+        "title": "Approved Expertise",
+        "subtitle": "Development, Cloud, and Web Design",
+        "tags": [
+          "Custom Software",
+          "Technological Support",
+          "International Datacenters"
+        ]
+      }
+    }
+  },
+  "contact": {
+    "title": "Start Your Project",
+    "description": "Talk to our specialists in architecture and software engineering.",
+    "corporateEmail": "Corporate E-mail",
+    "phone": "Phone / WhatsApp",
+    "form": {
+      "name": "Name",
+      "namePlaceholder": "Your full name",
+      "email": "Corporate E-mail",
+      "emailPlaceholder": "you@yourcompany.com",
+      "company": "Company",
+      "companyPlaceholder": "Your company's name",
+      "subject": "Subject",
+      "subjectPlaceholder": "How can we help your business?",
+      "message": "Message",
+      "messagePlaceholder": "Tell us the technical and operational details of your project...",
+      "submitPending": "Processing...",
+      "submit": "Send Message",
+      "success": "Message sent successfully! One of our engineers will contact you shortly.",
+      "error": "An error occurred while processing your request. Please try again or contact us directly via email."
+    }
+  },
+  "footer": {
+    "desc": "Software engineering and technological consulting.",
+    "legalTitle": "Legal Information",
+    "legal1": "Corporate Entity: INOVATHINGS BRASIL TECNOLOGIA LTDA",
+    "legal2": "CNPJ: 65.301.520/0001-80",
+    "addressTitle": "Address and Contact",
+    "address1": "Sector SHIN CA 01 Lot A, Block A, Room 234 - Lago Norte",
+    "address2": "Brasília - DF, Zip: 71.503-501",
+    "email": "E-mail: CONTATO@NAT.IA.BR",
+    "phone": "Phone: +55 (61) 8183-1244",
+    "copy": "InovaThings Brasil Tecnologia Ltda. All rights reserved."
+  }
+}
