@@ -1,5 +1,9 @@
 # Inova Things Brasil - Institucional
 
+<p align="center">
+  <img src="public/logo/inovathings-transparente.png" alt="Inova Things Brasil Logo" width="250" />
+</p>
+
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-18-blue?logo=react)](https://react.dev/)
 [![Docker](https://img.shields.io/badge/Docker-Multi--Stage-blue?logo=docker)](https://docker.com/)
