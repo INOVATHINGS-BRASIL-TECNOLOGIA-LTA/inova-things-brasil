@@ -125,7 +125,7 @@
       "messagePlaceholder": "Conte-nos os detalhes técnicos e operacionais do seu projeto...",
       "submitPending": "Processando...",
       "submit": "Enviar Mensagem",
-      "success": "Mensagem enviada com sucesso! Um de nossos engenheiros entrará em contato em breve.",
+      "success": "Mensagem enviada com sucesso!",
       "error": "Ocorreu um erro ao processar sua solicitação. Por favor, tente novamente ou entre em contato diretamente por e-mail."
     }
   },
