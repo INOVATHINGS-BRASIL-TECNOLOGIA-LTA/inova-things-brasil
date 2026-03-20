@@ -19,15 +19,24 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     openGraph: {
       title: dict.seo.title,
       description: dict.seo.description,
-      url: 'https://inovathingsbrasil.com.br',
+      url: 'https://inovathings.com.br',
       siteName: 'InovaThings Brasil',
       locale: locale,
       type: 'website',
+      images: [
+        {
+          url: 'https://inovathings.com.br/logo/inovathings-brasao.png',
+          width: 800,
+          height: 800,
+          alt: 'Inova Things Brasil Logo',
+        },
+      ],
     },
     twitter: {
       card: 'summary_large_image',
       title: dict.seo.title,
       description: dict.seo.description,
+      images: ['https://inovathings.com.br/logo/inovathings-brasao.png'],
     },
   };
 }
