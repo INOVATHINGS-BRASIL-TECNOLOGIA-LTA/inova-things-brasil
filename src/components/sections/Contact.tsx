@@ -1,24 +1,42 @@
 "use client";
 
-import { useTransition, useState, FormEvent } from "react";
+import { useTransition, useState } from "react";
 import { submitContact } from "@/actions/contact";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const contactSchema = z.object({
+  name: z.string().min(2, "O nome deve ter pelo menos 2 caracteres"),
+  email: z.string().email("Formato de e-mail inválido"),
+  company: z.string().min(2, "A empresa deve ter pelo menos 2 caracteres"),
+  subject: z.string().min(2, "O assunto deve ter pelo menos 2 caracteres"),
+  message: z.string().min(10, "A mensagem deve ter pelo menos 10 caracteres")
+});
+
+type ContactFormValues = z.infer<typeof contactSchema>;
 
 export default function Contact({ dict }: { dict: any }) {
   const [isPending, startTransition] = useTransition();
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  async function onSubmit(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+  const { register, handleSubmit, formState: { errors }, reset } = useForm<ContactFormValues>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: { name: "", email: "", company: "", subject: "", message: "" }
+  });
+
+  const onSubmitForm = (data: ContactFormValues) => {
     setStatus("idle");
-    const formData = new FormData(event.currentTarget);
-    
     startTransition(async () => {
       try {
+        const formData = new FormData();
+        Object.entries(data).forEach(([key, value]) => formData.append(key, value));
+        
         const result = await submitContact(formData);
         if (result.success) {
           setStatus("success");
-          (event.target as HTMLFormElement).reset();
+          reset();
         } else {
           setStatus("error");
         }
@@ -26,7 +44,7 @@ export default function Contact({ dict }: { dict: any }) {
         setStatus("error");
       }
     });
-  }
+  };
 
   return (
     <section id="contato" className="py-24 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300 border-t border-zinc-200 dark:border-zinc-900/50">
@@ -61,31 +79,36 @@ export default function Contact({ dict }: { dict: any }) {
           </FadeIn>
 
           <FadeIn delay={0.2} className="bg-white dark:bg-zinc-900/40 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xl backdrop-blur-sm transition-colors">
-            <form onSubmit={onSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="name" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.name}</label>
-                  <input required type="text" id="name" name="name" className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.namePlaceholder} />
+                  <input id="name" {...register("name")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.namePlaceholder} />
+                  {errors.name && <p className="text-red-500 text-xs font-semibold">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.email}</label>
-                  <input required type="email" id="email" name="email" className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.emailPlaceholder} />
+                  <input type="email" id="email" {...register("email")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.emailPlaceholder} />
+                  {errors.email && <p className="text-red-500 text-xs font-semibold">{errors.email.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="company" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.company}</label>
-                <input required type="text" id="company" name="company" className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.companyPlaceholder} />
+                <input id="company" {...register("company")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.companyPlaceholder} />
+                {errors.company && <p className="text-red-500 text-xs font-semibold">{errors.company.message}</p>}
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="subject" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.subject}</label>
-                <input required type="text" id="subject" name="subject" className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.subjectPlaceholder} />
+                <input id="subject" {...register("subject")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.subjectPlaceholder} />
+                {errors.subject && <p className="text-red-500 text-xs font-semibold">{errors.subject.message}</p>}
               </div>
 
               <div className="space-y-2">
                 <label htmlFor="message" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.message}</label>
-                <textarea required id="message" name="message" rows={4} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all resize-none font-medium" placeholder={dict.form.messagePlaceholder}></textarea>
+                <textarea id="message" rows={4} {...register("message")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all resize-none font-medium" placeholder={dict.form.messagePlaceholder}></textarea>
+                {errors.message && <p className="text-red-500 text-xs font-semibold">{errors.message.message}</p>}
               </div>
 
               <button 
