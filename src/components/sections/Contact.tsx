@@ -82,33 +82,33 @@ export default function Contact({ dict }: { dict: any }) {
             <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.name}</label>
-                  <input id="name" {...register("name")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.namePlaceholder} />
-                  {errors.name && <p className="text-red-500 text-xs font-semibold">{errors.name.message}</p>}
+                  <label htmlFor="name" className={`text-sm font-medium transition-colors ${errors.name ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.name}</label>
+                  <input id="name" {...register("name")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.name ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.namePlaceholder} />
+                  {errors.name && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.email}</label>
-                  <input type="email" id="email" {...register("email")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.emailPlaceholder} />
-                  {errors.email && <p className="text-red-500 text-xs font-semibold">{errors.email.message}</p>}
+                  <label htmlFor="email" className={`text-sm font-medium transition-colors ${errors.email ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.email}</label>
+                  <input type="email" id="email" {...register("email")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.email ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.emailPlaceholder} />
+                  {errors.email && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.email.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.company}</label>
-                <input id="company" {...register("company")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.companyPlaceholder} />
-                {errors.company && <p className="text-red-500 text-xs font-semibold">{errors.company.message}</p>}
+                <label htmlFor="company" className={`text-sm font-medium transition-colors ${errors.company ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.company}</label>
+                <input id="company" {...register("company")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.company ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.companyPlaceholder} />
+                {errors.company && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.company.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.subject}</label>
-                <input id="subject" {...register("subject")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all font-medium" placeholder={dict.form.subjectPlaceholder} />
-                {errors.subject && <p className="text-red-500 text-xs font-semibold">{errors.subject.message}</p>}
+                <label htmlFor="subject" className={`text-sm font-medium transition-colors ${errors.subject ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.subject}</label>
+                <input id="subject" {...register("subject")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.subject ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.subjectPlaceholder} />
+                {errors.subject && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.subject.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-zinc-700 dark:text-zinc-300">{dict.form.message}</label>
-                <textarea id="message" rows={4} {...register("message")} className="w-full bg-zinc-50 dark:bg-zinc-950/80 border border-zinc-200 dark:border-zinc-800 rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 focus:ring-zinc-400 dark:focus:ring-zinc-700 transition-all resize-none font-medium" placeholder={dict.form.messagePlaceholder}></textarea>
-                {errors.message && <p className="text-red-500 text-xs font-semibold">{errors.message.message}</p>}
+                <label htmlFor="message" className={`text-sm font-medium transition-colors ${errors.message ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.message}</label>
+                <textarea id="message" rows={4} {...register("message")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all resize-none font-medium ${errors.message ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.messagePlaceholder}></textarea>
+                {errors.message && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.message.message}</p>}
               </div>
 
               <button 
