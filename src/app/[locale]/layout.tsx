@@ -25,9 +25,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       type: 'website',
       images: [
         {
-          url: 'https://inovathings.com.br/logo/inovathings-brasao.png',
-          width: 800,
-          height: 800,
+          url: 'https://inovathings.com.br/logo/inovathings-primary.webp',
+          width: 1200,
+          height: 630,
           alt: 'Inova Things Brasil Logo',
         },
       ],
@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       card: 'summary_large_image',
       title: dict.seo.title,
       description: dict.seo.description,
-      images: ['https://inovathings.com.br/logo/inovathings-brasao.png'],
+      images: ['https://inovathings.com.br/logo/inovathings-primary.webp'],
     },
   };
 }
@@ -59,8 +59,8 @@ export default async function RootLayout({
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "InovaThings Brasil Tecnologia Ltda",
-    "url": "https://inovathingsbrasil.com.br",
-    "logo": "https://inovathingsbrasil.com.br/logo/inovathings-primary.webp",
+    "url": "https://inovathings.com.br",
+    "logo": "https://inovathings.com.br/logo/inovathings-primary.webp",
     "contactPoint": [
       {
         "@type": "ContactPoint",
