@@ -21,7 +21,7 @@ const partners = [
 
 export function Partners({ dictionary }: PartnersProps) {
   return (
-    <section className="py-20 overflow-hidden bg-white dark:bg-zinc-950 border-b border-zinc-200 dark:border-white/10">
+    <section className="py-20 overflow-hidden bg-white border-b border-zinc-200">
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12">
           <motion.h2
@@ -29,7 +29,7 @@ export function Partners({ dictionary }: PartnersProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-500 dark:from-white dark:to-zinc-500 mb-4"
+            className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-zinc-900 to-zinc-500 mb-4"
           >
             {dictionary?.partners?.title || "Nossos Parceiros"}
           </motion.h2>
@@ -38,7 +38,7 @@ export function Partners({ dictionary }: PartnersProps) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto"
+            className="text-lg text-zinc-600 max-w-2xl mx-auto"
           >
             {dictionary?.partners?.subtitle || "Inovando lado a lado com grandes players do mercado"}
           </motion.p>

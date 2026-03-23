@@ -13,11 +13,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <>
       <Hero dict={dict.hero} />
-      <Partners dictionary={dict} />
       <Services dict={dict.services} />
       <Portfolio dict={dict.portfolio} />
       <About dict={dict.about} />
       <Contact dict={dict.contact} />
+      <Partners dictionary={dict} />
     </>
   );
 }
