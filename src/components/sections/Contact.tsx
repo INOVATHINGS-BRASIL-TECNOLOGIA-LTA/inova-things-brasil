@@ -47,74 +47,78 @@ export default function Contact({ dict }: { dict: any }) {
   };
 
   return (
-    <section id="contato" className="py-24 bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300 border-t border-zinc-200 dark:border-zinc-900/50">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+    <section id="contato" className="relative py-24 bg-zinc-950 overflow-hidden">
+      {/* Cinematic Ambient Glow */}
+      <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-bl from-blue-600/20 via-indigo-600/10 to-transparent blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-violet-600/20 to-transparent blur-[120px] rounded-full pointer-events-none" />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-start">
           
           <FadeIn delay={0.1}>
-            <h2 className="text-3xl md:text-4xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight">{dict.title}</h2>
-            <p className="text-zinc-600 dark:text-zinc-400 text-lg mb-12">{dict.description}</p>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight drop-shadow-lg">{dict.title}</h2>
+            <p className="text-zinc-400 text-lg mb-12 max-w-md">{dict.description}</p>
             
             <div className="space-y-8">
               <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-900/80 flex items-center justify-center text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white border border-white/10 shadow-lg backdrop-blur-md">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-zinc-500 mb-1">{dict.corporateEmail}</p>
-                  <a href="mailto:contato@nat.ia.br" className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-white transition-colors cursor-pointer">contato@nat.ia.br</a>
+                  <a href="mailto:contato@nat.ia.br" className="text-xl font-semibold text-white hover:text-zinc-300 transition-colors cursor-pointer">contato@nat.ia.br</a>
                 </div>
               </div>
               
               <div className="flex items-center gap-5">
-                <div className="w-14 h-14 rounded-xl bg-white dark:bg-zinc-900/80 flex items-center justify-center text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-800 shadow-sm transition-colors">
+                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-white border border-white/10 shadow-lg backdrop-blur-md">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
                 <div>
                   <p className="text-sm font-medium text-zinc-500 mb-1">{dict.phone}</p>
-                  <a href="tel:+556181831244" className="text-xl font-semibold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-white transition-colors">(61) 8183-1244</a>
+                  <a href="tel:+556181831244" className="text-xl font-semibold text-white hover:text-zinc-300 transition-colors">(61) 8183-1244</a>
                 </div>
               </div>
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.2} className="bg-white dark:bg-zinc-900/40 p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 shadow-xl backdrop-blur-sm transition-colors">
-            <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-6">
+          <FadeIn delay={0.2} className="bg-white/5 p-8 md:p-10 rounded-3xl border border-white/10 shadow-2xl backdrop-blur-md relative">
+            <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-6 relative z-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className={`text-sm font-medium transition-colors ${errors.name ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.name}</label>
-                  <input id="name" {...register("name")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.name ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.namePlaceholder} />
-                  {errors.name && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.name.message}</p>}
+                  <label htmlFor="name" className="text-sm font-medium text-zinc-300">{dict.form.name}</label>
+                  <input id="name" {...register("name")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.name ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.namePlaceholder} />
+                  {errors.name && <p className="text-red-400 text-xs font-semibold mt-1">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className={`text-sm font-medium transition-colors ${errors.email ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.email}</label>
-                  <input type="email" id="email" {...register("email")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.email ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.emailPlaceholder} />
-                  {errors.email && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.email.message}</p>}
+                  <label htmlFor="email" className="text-sm font-medium text-zinc-300">{dict.form.email}</label>
+                  <input type="email" id="email" {...register("email")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.email ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.emailPlaceholder} />
+                  {errors.email && <p className="text-red-400 text-xs font-semibold mt-1">{errors.email.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="company" className={`text-sm font-medium transition-colors ${errors.company ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.company}</label>
-                <input id="company" {...register("company")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.company ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.companyPlaceholder} />
-                {errors.company && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.company.message}</p>}
+                <label htmlFor="company" className="text-sm font-medium text-zinc-300">{dict.form.company}</label>
+                <input id="company" {...register("company")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.company ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.companyPlaceholder} />
+                {errors.company && <p className="text-red-400 text-xs font-semibold mt-1">{errors.company.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="subject" className={`text-sm font-medium transition-colors ${errors.subject ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.subject}</label>
-                <input id="subject" {...register("subject")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all font-medium ${errors.subject ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.subjectPlaceholder} />
-                {errors.subject && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.subject.message}</p>}
+                <label htmlFor="subject" className="text-sm font-medium text-zinc-300">{dict.form.subject}</label>
+                <input id="subject" {...register("subject")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.subject ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.subjectPlaceholder} />
+                {errors.subject && <p className="text-red-400 text-xs font-semibold mt-1">{errors.subject.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className={`text-sm font-medium transition-colors ${errors.message ? 'text-red-500 dark:text-red-400' : 'text-zinc-700 dark:text-zinc-300'}`}>{dict.form.message}</label>
-                <textarea id="message" rows={4} {...register("message")} className={`w-full bg-zinc-50 dark:bg-zinc-950/80 border rounded-md px-4 py-3 text-zinc-900 dark:text-zinc-100 placeholder-zinc-400 dark:placeholder-zinc-600 focus:outline-none focus:ring-2 transition-all resize-none font-medium ${errors.message ? 'border-red-500 dark:border-red-500/50 focus:ring-red-500/50' : 'border-zinc-200 dark:border-zinc-800 focus:ring-zinc-400 dark:focus:ring-zinc-700'}`} placeholder={dict.form.messagePlaceholder}></textarea>
-                {errors.message && <p className="text-red-500 dark:text-red-400 text-xs font-semibold mt-1">{errors.message.message}</p>}
+                <label htmlFor="message" className="text-sm font-medium text-zinc-300">{dict.form.message}</label>
+                <textarea id="message" rows={4} {...register("message")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all resize-none font-medium shadow-inner ${errors.message ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.messagePlaceholder}></textarea>
+                {errors.message && <p className="text-red-400 text-xs font-semibold mt-1">{errors.message.message}</p>}
               </div>
 
               <button 
                 type="submit" 
                 disabled={isPending}
-                className="w-full bg-zinc-950 dark:bg-zinc-50 text-white dark:text-zinc-950 font-semibold py-4 rounded-md hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-lg cursor-pointer"
+                className="w-full bg-white text-zinc-950 font-bold py-4 rounded-xl hover:bg-zinc-200 transition-colors disabled:opacity-70 disabled:cursor-not-allowed flex items-center justify-center shadow-lg cursor-pointer mt-4"
               >
                 {isPending ? (
                   <span className="flex items-center gap-3">
@@ -130,12 +134,12 @@ export default function Contact({ dict }: { dict: any }) {
               </button>
 
               {status === "success" && (
-                <div className="p-4 rounded-md bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 font-medium text-center text-sm">
+                <div className="p-4 rounded-xl bg-green-500/20 border border-green-500/30 text-green-400 font-medium text-center text-sm backdrop-blur-sm">
                   {dict.form.success}
                 </div>
               )}
               {status === "error" && (
-                <div className="p-4 rounded-md bg-red-500/10 border border-red-500/20 text-red-600 dark:text-red-500 font-medium text-center text-sm">
+                <div className="p-4 rounded-xl bg-red-500/20 border border-red-500/30 text-red-400 font-medium text-center text-sm backdrop-blur-sm">
                   {dict.form.error}
                 </div>
               )}
