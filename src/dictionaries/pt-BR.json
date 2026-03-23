@@ -18,7 +18,7 @@
     "consultingBtn": "Agendar Consultoria"
   },
   "services": {
-    "title": "Serviços e Expertise",
+    "title": "Nossos Serviços",
     "description": "Soluções tecnológicas completas para impulsionar e escalar o seu negócio no ambiente digital.",
     "items": [
       {
@@ -38,6 +38,10 @@
         "description": "Concepção de portais corporativos, e-commerces e interfaces modernas com foco em usabilidade e performance de renderização."
       }
     ]
+  },
+  "partners": {
+    "title": "Empresas e parceiros que confiam em nós",
+    "subtitle": "Trabalhando juntos para construir o futuro da tecnologia corporativa."
   },
   "portfolio": {
     "title": "Ecossistema de Produtos",

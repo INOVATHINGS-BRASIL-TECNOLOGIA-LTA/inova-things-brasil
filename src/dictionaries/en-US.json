@@ -39,6 +39,10 @@
       }
     ]
   },
+  "partners": {
+    "title": "Companies and partners that trust us",
+    "subtitle": "Working together to build the future of corporate technology."
+  },
   "portfolio": {
     "title": "Product Ecosystem",
     "subtitle": "Proprietary solutions and strategic alliances driven by Artificial Intelligence.",

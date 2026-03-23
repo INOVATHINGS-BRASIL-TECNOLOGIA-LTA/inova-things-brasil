@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import { Partners } from "@/components/sections/Partners";
 import Services from "@/components/sections/Services";
 import Portfolio from "@/components/sections/Portfolio";
 import About from "@/components/sections/About";
@@ -12,6 +13,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
   return (
     <>
       <Hero dict={dict.hero} />
+      <Partners dictionary={dict} />
       <Services dict={dict.services} />
       <Portfolio dict={dict.portfolio} />
       <About dict={dict.about} />
