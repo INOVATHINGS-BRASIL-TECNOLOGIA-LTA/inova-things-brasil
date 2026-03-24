@@ -46,6 +46,14 @@ export default function Contact({ dict }: { dict: any }) {
     });
   };
 
+  const getInputClasses = (error: any) => {
+    const base = "w-full bg-white border-2 rounded-xl px-5 py-4 text-zinc-900 placeholder-zinc-400 focus:outline-none transition-all duration-300 font-medium shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_4px_25px_rgba(0,0,0,0.1)]";
+    const state = error 
+      ? "border-red-400 focus:border-red-500 focus:ring-4 focus:ring-red-500/20" 
+      : "border-transparent hover:border-indigo-200 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20";
+    return `${base} ${state}`;
+  };
+
   return (
     <section id="contato" className="relative py-24 bg-zinc-950 overflow-hidden">
       {/* Cinematic Ambient Glow */}
@@ -86,33 +94,33 @@ export default function Contact({ dict }: { dict: any }) {
             <form onSubmit={handleSubmit(onSubmitForm)} className="space-y-6 relative z-10">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-zinc-300">{dict.form.name}</label>
-                  <input id="name" {...register("name")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.name ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.namePlaceholder} />
-                  {errors.name && <p className="text-red-400 text-xs font-semibold mt-1">{errors.name.message}</p>}
+                  <label htmlFor="name" className="text-sm font-medium text-zinc-300 ml-1">{dict.form.name}</label>
+                  <input id="name" {...register("name")} className={getInputClasses(errors.name)} placeholder={dict.form.namePlaceholder} />
+                  {errors.name && <p className="text-red-400 text-xs font-semibold mt-1 ml-1">{errors.name.message}</p>}
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-zinc-300">{dict.form.email}</label>
-                  <input type="email" id="email" {...register("email")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.email ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.emailPlaceholder} />
-                  {errors.email && <p className="text-red-400 text-xs font-semibold mt-1">{errors.email.message}</p>}
+                  <label htmlFor="email" className="text-sm font-medium text-zinc-300 ml-1">{dict.form.email}</label>
+                  <input type="email" id="email" {...register("email")} className={getInputClasses(errors.email)} placeholder={dict.form.emailPlaceholder} />
+                  {errors.email && <p className="text-red-400 text-xs font-semibold mt-1 ml-1">{errors.email.message}</p>}
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="company" className="text-sm font-medium text-zinc-300">{dict.form.company}</label>
-                <input id="company" {...register("company")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.company ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.companyPlaceholder} />
-                {errors.company && <p className="text-red-400 text-xs font-semibold mt-1">{errors.company.message}</p>}
+                <label htmlFor="company" className="text-sm font-medium text-zinc-300 ml-1">{dict.form.company}</label>
+                <input id="company" {...register("company")} className={getInputClasses(errors.company)} placeholder={dict.form.companyPlaceholder} />
+                {errors.company && <p className="text-red-400 text-xs font-semibold mt-1 ml-1">{errors.company.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-zinc-300">{dict.form.subject}</label>
-                <input id="subject" {...register("subject")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all font-medium shadow-inner ${errors.subject ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.subjectPlaceholder} />
-                {errors.subject && <p className="text-red-400 text-xs font-semibold mt-1">{errors.subject.message}</p>}
+                <label htmlFor="subject" className="text-sm font-medium text-zinc-300 ml-1">{dict.form.subject}</label>
+                <input id="subject" {...register("subject")} className={getInputClasses(errors.subject)} placeholder={dict.form.subjectPlaceholder} />
+                {errors.subject && <p className="text-red-400 text-xs font-semibold mt-1 ml-1">{errors.subject.message}</p>}
               </div>
 
               <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-zinc-300">{dict.form.message}</label>
-                <textarea id="message" rows={4} {...register("message")} className={`w-full bg-white border-0 rounded-xl px-4 py-3.5 text-zinc-900 placeholder-zinc-400 focus:outline-none focus:ring-2 transition-all resize-none font-medium shadow-inner ${errors.message ? 'focus:ring-red-500/50' : 'focus:ring-indigo-500/50'}`} placeholder={dict.form.messagePlaceholder}></textarea>
-                {errors.message && <p className="text-red-400 text-xs font-semibold mt-1">{errors.message.message}</p>}
+                <label htmlFor="message" className="text-sm font-medium text-zinc-300 ml-1">{dict.form.message}</label>
+                <textarea id="message" rows={4} {...register("message")} className={`${getInputClasses(errors.message)} resize-none`} placeholder={dict.form.messagePlaceholder}></textarea>
+                {errors.message && <p className="text-red-400 text-xs font-semibold mt-1 ml-1">{errors.message.message}</p>}
               </div>
 
               <button 
