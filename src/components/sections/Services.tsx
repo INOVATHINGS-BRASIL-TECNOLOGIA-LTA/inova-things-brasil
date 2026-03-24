@@ -21,13 +21,18 @@ export default function Services({ dict }: { dict: any }) {
           {dict.items.map((service: any, idx: number) => (
             <FadeIn key={idx} delay={0.2 + idx * 0.1}>
               <div 
-                className="h-full group p-8 rounded-2xl border border-zinc-200 dark:border-zinc-800 bg-zinc-50 dark:bg-zinc-900/50 hover:bg-white dark:hover:bg-zinc-900 transition-all duration-300 hover:border-zinc-300 dark:hover:border-zinc-700 hover:-translate-y-1 shadow-sm hover:shadow-md"
+                className="h-full group relative p-8 sm:p-10 rounded-3xl bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/60 hover:dark:bg-zinc-900/80 transition-all duration-500 hover:border-zinc-300 dark:hover:border-zinc-700 shadow-sm hover:shadow-2xl overflow-hidden cursor-default"
               >
-                <div className="w-12 h-12 rounded-lg bg-zinc-100 dark:bg-zinc-800/50 flex items-center justify-center text-zinc-700 dark:text-zinc-300 mb-6 group-hover:text-zinc-950 dark:group-hover:text-white group-hover:bg-zinc-200 dark:group-hover:bg-zinc-800 transition-colors">
-                  {icons[idx]}
+                {/* Hover Ambient Glow */}
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/5 dark:bg-blue-500/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="relative z-10">
+                  <div className="w-14 h-14 mb-8 rounded-2xl bg-zinc-100 dark:bg-zinc-800/80 flex items-center justify-center text-zinc-700 dark:text-zinc-300 border border-zinc-200/50 dark:border-zinc-700/50 shadow-inner group-hover:scale-110 group-hover:bg-white dark:group-hover:bg-zinc-800 group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:border-blue-500/20 transition-all duration-500">
+                    {icons[idx]}
+                  </div>
+                  <h3 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50 mb-4 tracking-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">{service.title}</h3>
+                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-base">{service.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50 mb-3">{service.title}</h3>
-                <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed text-sm">{service.description}</p>
               </div>
             </FadeIn>
           ))}
