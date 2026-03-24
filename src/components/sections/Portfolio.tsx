@@ -33,20 +33,20 @@ export default function Portfolio({ dict }: { dict: any }) {
               delay={0.2 + idx * 0.1}
               className={`h-full ${idx === 0 ? 'lg:col-span-2' : ''}`}
             >
-              <div className="h-full group rounded-2xl bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors flex flex-col p-8 shadow-sm hover:shadow-md">
-                <div className="mb-6 flex flex-col items-start">
+              <div className="h-full group rounded-3xl bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-500 flex flex-col p-8 sm:p-10 shadow-sm hover:shadow-2xl">
+                <div className="mb-6 flex flex-col items-start w-full">
                   {availableLogos.includes(project.id) && (
-                    <div className="relative w-16 h-16 mb-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center p-3 border border-zinc-100 dark:border-zinc-800">
+                    <div className="relative w-full h-40 md:h-48 lg:h-56 mb-8 rounded-2xl bg-zinc-50 dark:bg-zinc-950/50 flex items-center justify-center border border-zinc-100 dark:border-zinc-800/80 overflow-hidden group-hover:bg-zinc-100 dark:group-hover:bg-zinc-900/80 transition-colors duration-500">
                       <Image 
                         src={`/logo/products/${project.id}.png`} 
                         alt={`${project.title} Logo`} 
                         fill 
-                        className="object-contain p-2"
-                        sizes="64px"
+                        className="object-contain p-6 md:p-8 filter drop-shadow-sm group-hover:scale-110 transition-transform duration-700 ease-out"
+                        sizes="(max-width: 768px) 100vw, 400px"
                       />
                     </div>
                   )}
-                  <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">{project.title}</h3>
+                  <h3 className="text-2xl md:text-3xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight">{project.title}</h3>
                   {project.partner && (
                     <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mt-2 block">
                       {dict.partnerPrefix}
