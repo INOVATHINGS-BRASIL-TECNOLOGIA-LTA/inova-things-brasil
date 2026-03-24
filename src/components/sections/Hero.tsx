@@ -24,7 +24,9 @@ export default function Hero({ dict }: { dict: any }) {
             src="/logo/inovathings-transparente.png" 
             alt="InovaThings Brasil Logo"
             width={800}
-            height={200}
+            height={300}
+            unoptimized={true}
+            quality={100}
             className="w-[85vw] max-w-2xl lg:max-w-4xl h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
             priority
           />
