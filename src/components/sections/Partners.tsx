@@ -12,6 +12,7 @@ const partners = [
   { name: "Akila", logo: "/logo/parceiros/akila.png" },
   { name: "Domo", logo: "/logo/parceiros/domo.png" },
   { name: "IntelligHub", logo: "/logo/parceiros/intellighub.png" },
+  { name: "Pro Empresa", logo: "/logo/parceiros/proempresa-logo.png" },
 ];
 
 export function Partners({ dictionary }: PartnersProps) {
