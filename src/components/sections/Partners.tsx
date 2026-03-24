@@ -8,7 +8,7 @@ interface PartnersProps {
 }
 
 const partners = [
-  { name: "IntelliHnat", logo: "/logo/parceiros/intellihnat.png" },
+  { name: "IntelligNat", logo: "/logo/parceiros/intellignat.png" },
   { name: "Akila", logo: "/logo/parceiros/akila.png" },
   { name: "Domo", logo: "/logo/parceiros/domo.png" },
   { name: "Pro Empresa", logo: "/logo/parceiros/proempresa-logo.png" },
