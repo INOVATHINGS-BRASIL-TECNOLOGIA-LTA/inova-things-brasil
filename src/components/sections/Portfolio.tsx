@@ -1,4 +1,5 @@
 import { FadeIn } from "@/components/ui/FadeIn";
+import Image from "next/image";
 
 interface Project {
   id: string;
@@ -11,6 +12,9 @@ interface Project {
 
 export default function Portfolio({ dict }: { dict: any }) {
   const projects: Project[] = dict.projects || [];
+  
+  // Valid logos existing in public/logo/products
+  const availableLogos = ['sgcp', 'conectelegis', 'nathealth', 'intellighub'];
 
   return (
     <section id="portfolio" className="py-24 bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-900/50 transition-colors duration-300">
@@ -30,7 +34,18 @@ export default function Portfolio({ dict }: { dict: any }) {
               className={`h-full ${idx === 0 ? 'lg:col-span-2' : ''}`}
             >
               <div className="h-full group rounded-2xl bg-white dark:bg-zinc-900/80 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 transition-colors flex flex-col p-8 shadow-sm hover:shadow-md">
-                <div className="mb-4">
+                <div className="mb-6 flex flex-col items-start">
+                  {availableLogos.includes(project.id) && (
+                    <div className="relative w-16 h-16 mb-4 rounded-xl bg-zinc-50 dark:bg-zinc-800/50 flex items-center justify-center p-3 border border-zinc-100 dark:border-zinc-800">
+                      <Image 
+                        src={`/logo/products/${project.id}.png`} 
+                        alt={`${project.title} Logo`} 
+                        fill 
+                        className="object-contain p-2"
+                        sizes="64px"
+                      />
+                    </div>
+                  )}
                   <h3 className="text-2xl font-semibold text-zinc-900 dark:text-zinc-50">{project.title}</h3>
                   {project.partner && (
                     <span className="text-xs font-semibold text-zinc-500 uppercase tracking-wider mt-2 block">
