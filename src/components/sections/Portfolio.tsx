@@ -14,7 +14,7 @@ export default function Portfolio({ dict, locale }: { dict: any; locale: string 
   const projects: Project[] = dict.projects || [];
   
   // Valid logos existing in public/logo/products
-  const availableLogos = ['sgcp', 'conectelegis', 'nathealth', 'intellighub'];
+  const availableLogos = ['sgcp', 'conectelegis', 'nathealth', 'intellighub', 'memo'];
 
   return (
     <section id="portfolio" className="py-24 bg-zinc-50 dark:bg-zinc-950 border-t border-zinc-200 dark:border-zinc-900/50 transition-colors duration-300">
