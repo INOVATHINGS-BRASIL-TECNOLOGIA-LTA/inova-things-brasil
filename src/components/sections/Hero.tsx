@@ -20,16 +20,18 @@ export default function Hero({ dict }: { dict: any }) {
 
         <FadeIn delay={0.2} className="w-full max-w-4xl flex justify-center mb-8 relative z-10">
           <h1 className="sr-only">{dict.title}</h1>
-          <Image 
-            src="/logo/inovathings-transparente-dark.png" 
-            alt="InovaThings Brasil Logo"
-            width={800}
-            height={300}
-            unoptimized={true}
-            quality={100}
-            className="w-[85vw] max-w-2xl lg:max-w-4xl h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] brightness-0 invert opacity-95"
-            priority
-          />
+          <div className="flex items-center justify-center overflow-hidden h-[120px] sm:h-[160px] md:h-[220px] lg:h-[280px]">
+            <Image 
+              src="/logo/inovathings-transparente-dark.png" 
+              alt="InovaThings Brasil Logo"
+              width={1280}
+              height={1280}
+              unoptimized={true}
+              quality={100}
+              className="w-[85vw] max-w-2xl lg:max-w-4xl h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] brightness-0 invert opacity-95"
+              priority
+            />
+          </div>
         </FadeIn>
         
         <FadeIn delay={0.3} className="w-full max-w-2xl">
