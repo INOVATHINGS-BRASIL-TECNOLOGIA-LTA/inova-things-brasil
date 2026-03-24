@@ -8,10 +8,9 @@ interface PartnersProps {
 }
 
 const partners = [
-  { name: "Nathealth", logo: "/logo/parceiros/nathealth.png" },
+  { name: "IntelliHnat", logo: "/logo/parceiros/intellihnat.png" },
   { name: "Akila", logo: "/logo/parceiros/akila.png" },
   { name: "Domo", logo: "/logo/parceiros/domo.png" },
-  { name: "IntelligHub", logo: "/logo/parceiros/intellighub.png" },
   { name: "Pro Empresa", logo: "/logo/parceiros/proempresa-logo.png" },
 ];
 
