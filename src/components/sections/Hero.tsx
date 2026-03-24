@@ -16,12 +16,6 @@ export default function Hero({ dict }: { dict: any }) {
 
       {/* Centered Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center justify-center text-center">
-        
-        <FadeIn delay={0.1}>
-          <div className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-sm text-xs md:text-sm font-medium tracking-widest uppercase text-zinc-300 mb-8">
-            {dict.badge || "InovaThings Brasil"}
-          </div>
-        </FadeIn>
 
         <FadeIn delay={0.2} className="w-full max-w-4xl">
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight mb-8 drop-shadow-2xl">
