@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -17,10 +18,16 @@ export default function Hero({ dict }: { dict: any }) {
       {/* Centered Content */}
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center justify-center text-center">
 
-        <FadeIn delay={0.2} className="w-full max-w-4xl">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight mb-8 drop-shadow-2xl">
-            {dict.title}
-          </h1>
+        <FadeIn delay={0.2} className="w-full max-w-4xl flex justify-center mb-8 relative z-10">
+          <h1 className="sr-only">{dict.title}</h1>
+          <Image 
+            src="/logo/inovathings-transparente.png" 
+            alt="InovaThings Brasil Logo"
+            width={800}
+            height={200}
+            className="w-[85vw] max-w-2xl lg:max-w-4xl h-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]"
+            priority
+          />
         </FadeIn>
         
         <FadeIn delay={0.3} className="w-full max-w-2xl">
