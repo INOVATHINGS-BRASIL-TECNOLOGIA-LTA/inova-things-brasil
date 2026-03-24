@@ -31,7 +31,7 @@ export default function Portfolio({ dict, locale }: { dict: any; locale: string 
             <FadeIn 
               key={project.id} 
               delay={0.2 + idx * 0.1}
-              className={`h-full ${idx === 0 ? 'lg:col-span-2' : ''}`}
+              className="h-full"
             >
               <div className="h-full group rounded-3xl bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all duration-500 flex flex-col p-8 sm:p-10 shadow-sm hover:shadow-2xl">
                 <div className="mb-6 flex flex-col items-start w-full">
