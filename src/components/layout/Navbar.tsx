@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { LanguageSwitcher } from "@/components/ui/LanguageSwitcher";
 
 export default function Navbar({ dict, currentLocale }: { dict: any; currentLocale: string }) {
@@ -35,7 +34,6 @@ export default function Navbar({ dict, currentLocale }: { dict: any; currentLoca
         </div>
         <div className="flex items-center gap-4">
           <LanguageSwitcher currentLocale={currentLocale} />
-          <ThemeToggle />
           <Link href={`/${currentLocale}#contato`} className="hidden sm:block bg-zinc-950 dark:bg-zinc-50 text-white dark:text-zinc-950 px-5 py-2.5 rounded-md text-sm font-semibold hover:bg-zinc-800 dark:hover:bg-zinc-200 transition-colors shadow-sm cursor-pointer">
             {dict.cta}
           </Link>

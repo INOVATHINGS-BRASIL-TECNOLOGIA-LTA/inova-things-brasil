@@ -87,7 +87,7 @@ export default async function RootLayout({
         />
       </head>
       <body suppressHydrationWarning className="min-h-full flex flex-col bg-zinc-50 dark:bg-zinc-950 text-zinc-950 dark:text-zinc-50 selection:bg-zinc-800 selection:text-white transition-colors duration-300">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark">
           <Navbar dict={dict.navbar} currentLocale={locale} />
           <main className="flex-1 w-full flex flex-col">
             {children}
