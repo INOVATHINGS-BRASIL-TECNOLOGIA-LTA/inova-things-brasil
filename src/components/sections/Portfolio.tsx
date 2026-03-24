@@ -10,7 +10,7 @@ interface Project {
   partnerUrl?: string;
 }
 
-export default function Portfolio({ dict }: { dict: any }) {
+export default function Portfolio({ dict, locale }: { dict: any; locale: string }) {
   const projects: Project[] = dict.projects || [];
   
   // Valid logos existing in public/logo/products
@@ -83,7 +83,7 @@ export default function Portfolio({ dict }: { dict: any }) {
 
                 <div className="mt-auto pt-6 border-t border-zinc-100 dark:border-zinc-800/80">
                   <a 
-                    href="#contato" 
+                    href={`/${locale}#contato`} 
                     className="inline-flex items-center text-sm font-semibold text-zinc-900 dark:text-zinc-50 hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors group/btn cursor-pointer"
                   >
                     {dict.cta}

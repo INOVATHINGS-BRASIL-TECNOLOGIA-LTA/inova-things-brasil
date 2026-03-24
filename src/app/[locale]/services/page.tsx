@@ -9,7 +9,7 @@ export default async function ServicesPage({ params }: { params: Promise<{ local
   return (
     <main className="min-h-screen pt-10">
       <Services dict={dict.services} />
-      <Portfolio dict={dict.portfolio} />
+      <Portfolio dict={dict.portfolio} locale={locale} />
     </main>
   );
 }
