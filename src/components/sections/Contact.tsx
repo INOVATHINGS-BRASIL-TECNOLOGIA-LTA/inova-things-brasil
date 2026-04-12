@@ -74,7 +74,7 @@ export default function Contact({ dict }: { dict: any }) {
                 </div>
                 <div>
                   <p className="text-sm font-medium text-zinc-500 mb-1">{dict.corporateEmail}</p>
-                  <a href="mailto:contato@nat.ia.br" className="text-xl font-semibold text-white hover:text-zinc-300 transition-colors cursor-pointer">contato@nat.ia.br</a>
+                  <a href="mailto:contato@inovathings.com.br" className="text-xl font-semibold text-white hover:text-zinc-300 transition-colors cursor-pointer">contato@inovathings.com.br</a>
                 </div>
               </div>
               

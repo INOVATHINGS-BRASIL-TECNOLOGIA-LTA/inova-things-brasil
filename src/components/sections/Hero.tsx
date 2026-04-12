@@ -43,7 +43,7 @@ export default function Hero({ dict }: { dict: any }) {
         <FadeIn delay={0.4}>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <Link 
-              href="/pt-BR/portfolio" 
+              href="/pt-BR/services" 
               className="inline-flex items-center justify-center px-8 py-4 rounded-full text-sm font-medium bg-white text-zinc-950 hover:bg-zinc-200 hover:scale-105 transition-all shadow-[0_0_40px_rgba(255,255,255,0.3)] cursor-pointer"
             >
               {dict.portfolioBtn}

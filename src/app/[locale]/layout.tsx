@@ -66,7 +66,7 @@ export default async function RootLayout({
         "@type": "ContactPoint",
         "telephone": "+55-61-8183-1244",
         "contactType": "customer service",
-        "email": "contato@nat.ia.br"
+        "email": "contato@inovathings.com.br"
       }
     ],
     "address": {

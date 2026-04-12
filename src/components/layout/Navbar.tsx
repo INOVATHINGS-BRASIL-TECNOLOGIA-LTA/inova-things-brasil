@@ -12,8 +12,7 @@ export default function Navbar({ dict, currentLocale }: { dict: any; currentLoca
             width={180} 
             height={40} 
             alt="InovaThings Brasil" 
-            className="object-contain hidden dark:block w-auto h-auto" 
-            style={{ width: 'auto' }}
+            className="object-contain hidden dark:block h-10 sm:h-12 w-auto" 
             priority
           />
           <Image 
@@ -21,8 +20,7 @@ export default function Navbar({ dict, currentLocale }: { dict: any; currentLoca
             width={180} 
             height={40} 
             alt="InovaThings Brasil" 
-            className="object-contain block dark:hidden w-auto h-auto" 
-            style={{ width: 'auto' }}
+            className="object-contain block dark:hidden h-10 sm:h-12 w-auto" 
             priority
           />
         </Link>

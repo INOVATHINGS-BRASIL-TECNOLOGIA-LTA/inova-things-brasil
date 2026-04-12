@@ -17,7 +17,7 @@ export async function submitContact(formData: FormData) {
       port: 465,
       secure: true,
       auth: {
-        user: "contato@nat.ia.br",
+        user: "contato@inovathings.com.br",
         pass: process.env.SMTP_PASSWORD,
       },
     });
@@ -25,8 +25,8 @@ export async function submitContact(formData: FormData) {
     const emailHtml = await render(<ContactTemplate name={name} email={email} company={company} subject={subject} message={message} />);
 
     await transporter.sendMail({
-      from: '"InovaThings Brasil" <contato@nat.ia.br>',
-      to: 'contato@nat.ia.br',
+      from: '"InovaThings Brasil" <contato@inovathings.com.br>',
+      to: 'contato@inovathings.com.br',
       subject: `[Site InovaThings] ${subject} - ${company}`,
       html: emailHtml as string,
       replyTo: email,
